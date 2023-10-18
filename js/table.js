@@ -36,7 +36,6 @@ form.addEventListener("submit", function (e) {
   document.getElementById("dataInput3").value = "";
 });
 
-// Функція для дублювання обраних рядків
 duplicateButton.addEventListener("click", function () {
   var rows = dataTable.rows;
 
@@ -50,7 +49,6 @@ duplicateButton.addEventListener("click", function () {
   }
 });
 
-// Функція для видалення обраних рядків
 deleteButton.addEventListener("click", function () {
   var rows = dataTable.rows;
   for (var i = rows.length - 1; i >= 0; i--) {
