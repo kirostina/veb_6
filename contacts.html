@@ -49,10 +49,12 @@
 <form id="myForm">
         <label for="dataInput1">Name</label>
         <input class="cont-form" type="text" id="dataInput1" name="dataInput">
+        <span class="error-message" id="error1"></span>
         <label for="dataInput2">Email</label>
         <input class="cont-form" type="text" id="dataInput2" name="dataInput">
-        <label for="phone">Phone</label>
-    <input class="cont-form" type="tel" name="user-phone" id="phone" required/>
+         <span class="error-message" id="error2"></span>
+        <label for="dataInput3">Phone</label>
+    <input class="cont-form" type="tel" name="dataInput" id="dataInput3" required/>
         <!-- Додайте стільки полів вводу, скільки вам потрібно -->
         <span id="error" class="error"></span>
         <br>
@@ -63,14 +65,19 @@
     <table id="dataTable">
         <thead>
             <tr>
-                <th>Дані 1</th>
-                <th>Дані 2</th>
-                <th>Dani 3</th>
+                <th>Select</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
         </tbody>
     </table>
+    <button id="duplicateButton">Дублювати обрані</button>
+    <button id="deleteButton">Видалити обрані</button>
+
                      
                 </div>
             </div>

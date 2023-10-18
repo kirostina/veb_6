@@ -1,22 +1,31 @@
-var form = document.getElementById("myForm");
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+// Функція для валідації поля
+function validateField(inputElement, errorElement) {
+  var inputValue = inputElement.value;
 
-  var dataInput1 = document.getElementById("dataInput1").value;
-  var dataInput2 = document.getElementById("dataInput2").value;
-  // Додайте інші поля вводу, якщо потрібно
+  if (inputValue === "") {
+    errorElement.textContent = "Це поле не може бути порожнім.";
+    errorElement.style.display = "block";
+    return false;
+  } else {
+    errorElement.style.display = "none";
+    return true;
+  }
+}
 
-  var dataTable = document
-    .getElementById("dataTable")
-    .getElementsByTagName("tbody")[0];
-  var newRow = dataTable.insertRow(dataTable.rows.length);
-  var cell1 = newRow.insertCell(0);
-  cell1.textContent = dataInput1;
-  var cell2 = newRow.insertCell(1);
-  cell2.textContent = dataInput2;
-  // Додайте інші стовпці, якщо потрібно
+// Отримайте посилання на поля та повідомлення про помилку
+var dataInput1 = document.getElementById("dataInput1");
+var error1 = document.getElementById("error1");
+var dataInput2 = document.getElementById("dataInput2");
+var error2 = document.getElementById("error2");
 
-  document.getElementById("dataInput1").value = "";
-  document.getElementById("dataInput2").value = "";
-  // Очистити поля вводу
+// Валідація при події submit форми
+document.getElementById("myForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Заборонити стандартну відправку форми
+
+  var isDataInput1Valid = validateField(dataInput1, error1);
+  var isDataInput2Valid = validateField(dataInput2, error2);
+
+  if (isDataInput1Valid && isDataInput2Valid) {
+    // Всі дані введені правильно, ви можете відправити форму
+  }
 });

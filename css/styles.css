@@ -1696,3 +1696,8 @@ td {
     border-radius: 4px;
     outline: none;
 }
+.error-message {
+    color: red;
+    display: none;
+    /* Початково сховані */
+}

@@ -1,3 +1,3 @@
 $(document).ready(function () {
-  $("#phone").inputmask("+38(099) 999-99-99");
+  $("#dataInput3").inputmask("+38(099) 999-99-99");
 });
