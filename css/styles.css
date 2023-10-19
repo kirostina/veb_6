@@ -1701,3 +1701,28 @@ td {
     display: none;
     /* Початково сховані */
 }
+
+.main-btn {
+    display: block;
+
+    min-width: 169px;
+    padding-top: 16px;
+    padding-right: 32px;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    border: none;
+    margin-top: 20px;
+
+    background-color: #e66759;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
+
+    color: var(--clean-white);
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-btn:hover,
+.main-btn:focus {
+    background-color: #ca8078;
+}
