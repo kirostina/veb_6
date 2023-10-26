@@ -1,27 +1,28 @@
-function validateField(inputElement, errorElement) {
-  var inputValue = inputElement.value;
+document
+  .getElementById("registrationForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  if (inputValue === "") {
-    errorElement.textContent = "Це поле не може бути порожнім.";
-    errorElement.style.display = "block";
-    return false;
-  } else {
-    errorElement.style.display = "none";
-    return true;
-  }
-}
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const gender = document.querySelector('input[name="gender"]:checked').value;
 
-var dataInput1 = document.getElementById("dataInput1");
-var error1 = document.getElementById("error1");
-var dataInput2 = document.getElementById("dataInput2");
-var error2 = document.getElementById("error2");
+    // Додавання даних до таблиці
+    const table = document
+      .getElementById("userTable")
+      .getElementsByTagName("tbody")[0];
+    const newRow = table.insertRow(table.rows.length);
+    newRow.insertCell(0).innerHTML = name;
+    newRow.insertCell(1).innerHTML = email;
+    newRow.insertCell(2).innerHTML = phone;
+    newRow.insertCell(3).innerHTML = gender;
 
-document.getElementById("myForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+    // Додавання чекбоксу для вибору рядку
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    newRow.insertCell(4).appendChild(checkbox);
 
-  var isDataInput1Valid = validateField(dataInput1, error1);
-  var isDataInput2Valid = validateField(dataInput2, error2);
-
-  if (isDataInput1Valid && isDataInput2Valid) {
-  }
-});
+    // Очистити форму
+    document.getElementById("registrationForm").reset();
+  });
